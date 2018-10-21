@@ -55,7 +55,7 @@ namespace AvataxDemo
             }
 
             //app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
             app.UseCors(x => x
