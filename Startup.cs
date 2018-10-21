@@ -1,4 +1,5 @@
 using AutoMapper;
+using System;
 using AvataxDemo.Helpers;
 using AvataxDemo.Services;
 using Microsoft.AspNetCore.Builder;
@@ -34,7 +35,7 @@ namespace AvataxDemo
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "/Client/build";
+                configuration.RootPath = "Client";
             });
         }
 
@@ -43,6 +44,7 @@ namespace AvataxDemo
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            System.Environment.SetEnvironmentVariable("SpaRoot\\", "Client");
 
             if (env.IsDevelopment())
             {
@@ -73,7 +75,7 @@ namespace AvataxDemo
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "/Client/build";
+                spa.Options.SourcePath = "Client";
 
                 //if (env.IsDevelopment())
                 //{
