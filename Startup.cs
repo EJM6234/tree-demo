@@ -44,7 +44,6 @@ namespace AvataxDemo
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            // System.Environment.SetEnvironmentVariable("SpaRoot\\", "Client");
 
             if (env.IsDevelopment())
             {
@@ -77,10 +76,10 @@ namespace AvataxDemo
             {
                 spa.Options.SourcePath = "Client";
 
-                // if (env.IsDevelopment())
-                // {
-                //    spa.UseReactDevelopmentServer(npmScript: "start");
-                // }
+                if (env.IsDevelopment())
+                {
+                   spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
     }
