@@ -73,15 +73,15 @@ namespace AvataxDemo
 
 
 
-            //app.UseSpa(spa =>
-            //{
-                //spa.Options.SourcePath = "Client";
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "Client/build/index.html";
 
                 // if (env.IsDevelopment())
                 // {
                 //     spa.UseReactDevelopmentServer(npmScript: "start");
                 // }
-            //});
+            });
         }
     }
 }
