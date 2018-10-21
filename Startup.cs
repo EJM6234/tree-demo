@@ -73,7 +73,7 @@ namespace AvataxDemo
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "Client";
+                spa.Options.SourcePath = "Client/build";
 
                 // if (env.IsDevelopment())
                 // {
