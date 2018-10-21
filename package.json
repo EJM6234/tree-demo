@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EJM6234/tree-demo/issues"
   },
-  "homepage": "https://github.com/EJM6234/tree-demo#readme"
+  "homepage": "https://github.com/EJM6234/tree-demo#readme",
+  "dependencies": {
+    "npm": "^6.4.1"
+  }
 }
