@@ -51,11 +51,11 @@ namespace AvataxDemo
             else
             {
                 app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseHttpsRedirection();
+            //app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
             app.UseCors(x => x
@@ -71,15 +71,17 @@ namespace AvataxDemo
                     template: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "Client/build";
+
+
+            //app.UseSpa(spa =>
+            //{
+                //spa.Options.SourcePath = "Client";
 
                 // if (env.IsDevelopment())
                 // {
                 //     spa.UseReactDevelopmentServer(npmScript: "start");
                 // }
-            });
+            //});
         }
     }
 }
