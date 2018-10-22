@@ -1,0 +1,25 @@
+ul {
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: #5A6268;
+}
+
+ul:hover {
+    color: #ABAFB4;
+}
+
+li {
+    cursor: default;
+    list-style: none;
+}
+
+i .fa-angle-down, i .fa-angle-right {
+    cursor: pointer;
+    color: #5A6268;
+}
+
+i .fa-angle-down:hover, i .fa-angle-right:hover {
+    cursor: pointer;
+    color: #ABAFB4;
+}

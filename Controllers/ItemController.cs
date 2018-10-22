@@ -26,6 +26,7 @@ namespace AvataxDemo.Controllers
             _appSettings = appSettings.Value;
         }
 
+        // Get all items /items
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -34,6 +35,7 @@ namespace AvataxDemo.Controllers
             return Ok(itemDtos);
         }
 
+        // Get item by id /items/:id
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -42,6 +44,7 @@ namespace AvataxDemo.Controllers
             return Ok(itemDto);
         }
 
+        // Create a new item /items/create
         [HttpPost("create")]
         public IActionResult Register([FromBody]ItemDto itemDto)
         {
@@ -60,6 +63,7 @@ namespace AvataxDemo.Controllers
             }
         }
 
+        // Update item price /items/:id
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody]ItemDto itemDto)
         {
@@ -82,6 +86,7 @@ namespace AvataxDemo.Controllers
             }
         }
 
+        // Delete item /items/:id
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

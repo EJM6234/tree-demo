@@ -1,0 +1,32 @@
+.trash {
+    margin-right: 0.4em;
+    color: #5A6268 !important;
+}
+
+.pencil {
+    margin-right: 1em;
+    color: #5A6268 !important;
+}
+
+.pencil:hover, .trash:hover{
+    cursor: pointer;
+    color: #ABAFB4 !important;
+}
+
+li {
+    color: #5A6268 !important;
+}
+
+.edit-form-control {
+    height: 1.4rem;
+    padding: .375rem .3rem;
+    margin-left: .2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

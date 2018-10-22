@@ -35,7 +35,7 @@ namespace AvataxDemo
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "client";
+                configuration.RootPath = "Client/build";
             });
         }
 
@@ -74,11 +74,11 @@ namespace AvataxDemo
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "client";
+                spa.Options.SourcePath = "Client";
 
                 if (env.IsDevelopment())
                 {
-                   spa.UseReactDevelopmentServer(npmScript: "start");
+                    spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
         }

@@ -3,4 +3,7 @@
     border: 1px solid #A7A7A7;
     border-radius: 5px;
     box-shadow: 0px 0px 9px 1px #A7A7A7;
+    height: 100%;
+    max-height: 574px;
+    overflow: auto;
 }

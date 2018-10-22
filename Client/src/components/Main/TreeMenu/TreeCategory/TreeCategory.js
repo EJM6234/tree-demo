@@ -7,6 +7,7 @@ export default class TreeCategory extends Component {
         isOpen: false
     }
 
+    // Handle whether children in tree view are collapsed or not
     handleOpen = () => {
         this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
@@ -14,14 +15,15 @@ export default class TreeCategory extends Component {
     render() {
         const categories = Object.keys(this.props.treeRenderData);
         return (
-            <ul>    
+            <ul className="mx-4 my-1 p-0">    
                 <div onClick={this.handleOpen}>
                     <i className={this.state.isOpen ? 'fa fa-angle-down' : 'fa fa-angle-right'} />
-                    <span>{this.props.category}</span>
+                    <span className='ml-2 font-weight-bold'>{this.props.category}</span>
                 </div>
                 <Collapse isOpen={this.state.isOpen}>
                     {
                         categories.map((category, i) => {
+                            // If array does not exist and nesting goes deeper, render another collapsible category
                             if(!Array.isArray(this.props.treeRenderData[category])) {
                                 return (
                                     <TreeCategory 
@@ -32,6 +34,7 @@ export default class TreeCategory extends Component {
                                         handlePriceUpdate={this.props.handlePriceUpdate}
                                         treeRenderData={this.props.treeRenderData[category]} />
                                 );
+                            // If we reach the end of the object nesting, render the item component
                             } else {
                                 return (
                                     <TreeItem 

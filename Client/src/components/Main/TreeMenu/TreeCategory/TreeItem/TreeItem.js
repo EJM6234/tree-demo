@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TreeItem.css';
 
 export default class TreeItem extends Component {
     state = {
@@ -6,14 +7,17 @@ export default class TreeItem extends Component {
         editPrice: undefined
     }
 
+    // Handle input change for editPrice
     handleChange = (e) => {
         this.setState({ editPrice: e.target.value })
     }
 
+    // Handle deletion of item, runs handleDelete in Main
     handleDeleteClick = () => {
         this.props.handleDelete(this.props.id);
     }
 
+    // Toggles update price input field
     handleUpdateClick = () => {
         this.setState((prevState, props) => ({ 
             isUpdating: !prevState.isUpdating,
@@ -24,22 +28,28 @@ export default class TreeItem extends Component {
 
     render() {
         return (
-            <ul>
+            <div className="ml-4 my-1 p-0">
                 <li>
-                    {this.props.category}:
+                    <i className='fa fa-trash trash' onClick={this.handleDeleteClick} />
+                    <i className='fa fa-pencil-alt pencil' onClick={this.handleUpdateClick} />
+                    {this.props.category}: 
                     {
                         this.state.isUpdating 
-                            ? <input 
-                                name={`priceUpdate${this.props.id}`} 
-                                value={this.state.editPrice} 
-                                onChange={this.handleChange} />
-                            : <span>${this.props.price}</span>
+                            ? <> 
+                                <span className="ml-2 font-italic">$</span> 
+                                <input 
+                                    autoFocus
+                                    type="text"
+                                    className='font-italic edit-form-control'
+                                    name={`priceUpdate${this.props.id}`} 
+                                    value={this.state.editPrice} 
+                                    onChange={this.handleChange} />
+                            </>
+                            : <span className='font-italic ml-2'>${this.props.price}</span>
                     }
-                    <i className='fa fa-trash' onClick={this.handleDeleteClick} />
-                    <i className='fa fa-pencil-alt' onClick={this.handleUpdateClick} />
                 </li>
 
-            </ul>
+            </div>
         )
     }
 }
